@@ -50,11 +50,11 @@ const EditPersonal = ({ person, setPerson, toggleEdit }) => {
 
 const ShowPersonal = ({ person }) => {
   return (
-    <>
+    <div>
       <p>{person.name}</p>
       <p>{person.email}</p>
       <p>{person.phone}</p>
-    </>
+    </div>
   );
 };
 
@@ -73,10 +73,10 @@ const Personal = () => {
 
   return (
     <div className="personal">
-      <h2>Personal</h2>
       <button type="button" className="toggle-edit" onClick={toggleEdit}>
         {isEditing ? 'Cancel' : 'Edit'}
       </button>
+      <h2>Personal</h2>
       {isEditing ? (
         <EditPersonal
           person={person}

@@ -103,10 +103,10 @@ const Work = () => {
 
   return (
     <div className="education">
-      <h2>Work</h2>
       <button type="button" className="toggle-edit" onClick={toggleEdit}>
         {isEditing ? 'Cancel' : 'Edit'}
       </button>
+      <h2>Work</h2>
       {isEditing ? (
         <EditWork job={job} setJob={setJob} toggleEdit={toggleEdit} />
       ) : (

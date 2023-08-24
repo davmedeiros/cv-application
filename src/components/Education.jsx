@@ -73,10 +73,10 @@ const Education = () => {
 
   return (
     <div className="education">
-      <h2>Education</h2>
       <button type="button" className="toggle-edit" onClick={toggleEdit}>
         {isEditing ? 'Cancel' : 'Edit'}
       </button>
+      <h2>Education</h2>
       {isEditing ? (
         <EditEducation
           course={course}
