@@ -1,18 +1,50 @@
 import { useState } from 'react';
 
-const EditPersonal = ({ person }) => {
+const EditPersonal = ({ person, setPerson, toggleEdit }) => {
+  const editedPerson = structuredClone(person);
+
+  const updatePerson = (event) => {
+    event.preventDefault();
+
+    setPerson({
+      name: editedPerson.name,
+      email: editedPerson.email,
+      phone: editedPerson.phone,
+    });
+
+    toggleEdit();
+  };
+
   return (
-    <>
+    <form onSubmit={updatePerson}>
       <label htmlFor="name">Name</label>
-      <input type="text" name="name" id="name" value={person.name} />
+      <input
+        type="text"
+        name="name"
+        id="name"
+        defaultValue={editedPerson.name}
+        onChange={(event) => (editedPerson.name = event.target.value)}
+      />
       <label htmlFor="email">Email</label>
-      <input type="email" name="email" id="email" value={person.email} />
+      <input
+        type="email"
+        name="email"
+        id="email"
+        defaultValue={editedPerson.email}
+        onChange={(event) => (editedPerson.email = event.target.value)}
+      />
       <label htmlFor="phone">Phone</label>
-      <input type="number" name="phone" id="phone" value={person.phone} />
-      <button type="button" className="save">
+      <input
+        type="tel"
+        name="phone"
+        id="phone"
+        defaultValue={editedPerson.phone}
+        onChange={(event) => (editedPerson.phone = event.target.value)}
+      />
+      <button type="submit" className="save">
         Save
       </button>
-    </>
+    </form>
   );
 };
 
@@ -22,9 +54,6 @@ const ShowPersonal = ({ person }) => {
       <p>{person.name}</p>
       <p>{person.email}</p>
       <p>{person.phone}</p>
-      <button type="button" className="edit">
-        Edit
-      </button>
     </>
   );
 };
@@ -42,16 +71,21 @@ const Personal = () => {
     setIsEditing(!isEditing);
   };
 
-  const info = isEditing ? (
-    <EditPersonal person={person} />
-  ) : (
-    <ShowPersonal person={person} />
-  );
-
   return (
     <div className="personal">
       <h2>Personal</h2>
-      {info}
+      <button type="button" className="toggle-edit" onClick={toggleEdit}>
+        {isEditing ? 'Cancel' : 'Edit'}
+      </button>
+      {isEditing ? (
+        <EditPersonal
+          person={person}
+          setPerson={setPerson}
+          toggleEdit={toggleEdit}
+        />
+      ) : (
+        <ShowPersonal person={person} />
+      )}
     </div>
   );
 };

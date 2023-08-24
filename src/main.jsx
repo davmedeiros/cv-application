@@ -5,6 +5,6 @@ import './index.css';
 
 ReactDOM.createRoot(document.getElementById('root')).render(
   <React.StrictMode>
-    <Personal name="John Doe" email="johndoe@email.com" phone="555-555-5555" />
+    <Personal />
   </React.StrictMode>
 );
