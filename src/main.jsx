@@ -7,8 +7,10 @@ import './index.css';
 
 ReactDOM.createRoot(document.getElementById('root')).render(
   <React.StrictMode>
-    <Personal />
-    <Education />
-    <Work />
+    <main>
+      <Personal />
+      <Education />
+      <Work />
+    </main>
   </React.StrictMode>
 );
