@@ -21,7 +21,7 @@ const EditEducation = ({ course, setCourse, toggleEdit }) => {
       <input
         type="text"
         name="school-name"
-        id="schoolName"
+        id="school-name"
         defaultValue={editedCourse.schoolName}
         onChange={(event) => (editedCourse.schoolName = event.target.value)}
       />
