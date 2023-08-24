@@ -17,7 +17,7 @@ const EditEducation = ({ course, setCourse, toggleEdit }) => {
 
   return (
     <form onSubmit={updateCourse}>
-      <label htmlFor="school-name">schoolName</label>
+      <label htmlFor="school-name">School Name</label>
       <input
         type="text"
         name="school-name"
@@ -25,7 +25,7 @@ const EditEducation = ({ course, setCourse, toggleEdit }) => {
         defaultValue={editedCourse.schoolName}
         onChange={(event) => (editedCourse.schoolName = event.target.value)}
       />
-      <label htmlFor="study">Email</label>
+      <label htmlFor="study">Study</label>
       <input
         type="text"
         name="study"
@@ -33,7 +33,7 @@ const EditEducation = ({ course, setCourse, toggleEdit }) => {
         defaultValue={editedCourse.study}
         onChange={(event) => (editedCourse.study = event.target.value)}
       />
-      <label htmlFor="date">Phone</label>
+      <label htmlFor="date">Date</label>
       <input
         type="date"
         name="date"
