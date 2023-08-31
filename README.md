@@ -1,1 +1,1 @@
-# TOP - CV Application
+# TOP - Educational Project - CV Application
